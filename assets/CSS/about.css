@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+
+.aboutus {
+    display: flex;
+    background-color: #f4f1e8;
+    margin: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.image_container {
+    perspective: 1000px;
+    margin: 50px auto;
+    width: 400px;
+    height: 420px;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+/* 有旋轉卡片的效果 */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    margin-bottom: 20px;
+    height: 300px;
+}
+
+/* 游標還沒碰上照片的時候顯示的第一個畫面 */
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    position: relative;
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    line-height: 200px;
+
+}
+
+.front_hou {
+    border-radius: 20px;
+    width: 250px;
+    height: 270px;
+    align-items: center;
+}
+
+.front_tzu {
+    border-radius: 20px;
+    width: 250px;
+    height: 270px;
+    align-items: center;
+}
+
+.front_mao {
+    border-radius: 20px;
+    width: 250px;
+    height: 270px;
+}
+
+.front_tseng {
+    border-radius: 20px;
+    width: 250px;
+    height: 270px;
+    align-items: center;
+}
+
+.front_huang {
+    border-radius: 20px;
+    width: 250px;
+    height: 270px;
+    align-items: center;
+}
+
+/* 游標還碰上照片的時候顯示的第二個畫面 */
+.back {
+    transform: rotateY(180deg);
+    color: black;
+    border-radius: 20px;
+    background-color: bisque;
+    background-color: #e3dfd5;
+   
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.back p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: 'Handlee', cursive;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 270px;
+}
+
+/* 游標碰上區塊後，照片會往橫軸方向轉180度 */
+.image_container:hover .flipper,
+.image_container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.image_container h2 {
+    text-align: center;
+}
+
+.txt {
+    text-align: center;
+    font-size: 20px;
+}
+
+.visitus h2{
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    color: #003566;
+    font-size: 20px;
+}
+
+.visitus pre {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.mapcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    max-width: 1000px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 用transform讓地圖可以直接顯示大頭針在畫面中央 */
+.map iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.feedback {
+    width: 500px;
+
+}
+
+.feedback h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:5px;
+    color: #003566;
+    font-size: 20px;
+}
+
+.contactinfo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+.contactinfoimg {
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.contactinfotxt {
+    margin-right: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.typetxt,
+textarea {
+    border: 1px solid black;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.botton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+
+}
+
+.botton :hover {
+    background-color: #fbfbfb;
+    color: #226af1;
+    cursor: pointer;
+}
+
+span {
+    padding: 10px;
+}
+
+.bottonto {
+    background-color: #f4f1e8;
+    color: #003566;
+    border: none;
+    line-height: 1cm;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}

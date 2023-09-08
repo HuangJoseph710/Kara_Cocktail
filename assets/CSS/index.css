@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+}
+.digcon{
+    display: grid;
+    grid-template-rows: 500px 300px ;
+}
+.slide {
+    grid-row: 1;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition:  .4s ease-in-out;
+  }
+  
+  .slide.show {
+    opacity: 1;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content:center ;
+    overflow: hidden;
+    align-items: center; 
+  }
+  
+  .carousel img {
+    width: 1300px;
+    height: 700px;
+    position: absolute;
+    top: 215px;
+  }
+  
+  .prev,.next{
+    position: absolute;
+    top: 600px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease-in
+  }
+  .prev{
+    left: 20px;
+  }
+  .prev:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .next{
+    right: 10px;
+  }
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+.container {
+    position: relative;
+    align-items: center;
+    display: flex; 
+    justify-items: center; 
+    align-items: center; 
+    /* 垂直居中 */
+    flex-direction: column;
+  }
+/* 熱銷、新品按鈕 */
+.button {
+    margin-top: -50px;
+    margin-bottom: 30px; 
+    display: flex;
+    justify-self: center; 
+}
+/* 按鈕位置 */
+input[name="tab"]
+{
+    background:white;
+    color: black;
+    transition: .4s ease-in;
+}
+/* 按鈕動畫*/
+ input[name="tab"]:checked
+{
+    background: #dbd8ce;
+    color:white;
+    
+} 
+input[name="tab"]:hover
+{
+    background: #cedbd8;
+    color:white;
+} 
+
+input[name="tab"]
+{
+    -webkit-appearance: none;
+    border: 1px solid #d6d6d5;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 120px;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+ /* 在第一按鈕增加20px的間距 */
+input[name="tab"]:first-child
+{
+    margin-right: 20px; 
+}
+input[name="tab"]::after
+{
+    content: attr(title);
+}
+
+/* 熱銷商品與新商品 */
+.BestPic{
+    display: flex;
+    width: 1300px;
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction:row;
+}
+.BestWineBlock{
+    position: relative;
+    align-items: center;
+    height: 10%;
+    padding:10px 0px 10px ;
+    margin: 0 20px;
+}
+.BasePic{
+    height:266.5px;
+    width: 203px;
+}
+.WinePic{
+    width: 200px;
+}
+.RWinePic{
+    height:266.5px;
+    width: 203px;
+}
+.CWinePic{
+    height:266.5px;
+}
+.BestText{
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    margin-top: 10px;
+    transition: opacity 0.6s ease;
+    background-color: transparent;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight:500 ;
+}
+.QuickView{
+   text-align: center;
+   background-color:transparent;
+   z-index: -10;
+}
+
+#btn1{
+    z-index: 8;
+    position: relative;
+}
+.btn{
+    background-color:transparent;
+    color:transparent;
+    cursor: pointer;
+    border: none; 
+    padding: 5px 60px;
+    font-size: 20px;
+    font-family: Arial, sans-serif; 
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    transition: color 0.2s ease-in;
+    z-index: 10; 
+    position: relative;
+    top: -30px; 
+}
+.btn:hover{
+    opacity: 1;
+    color: rgb(123, 119, 119);
+    background-color:#cedbd8;
+}
+
+
+
+/* 商品介紹 */
+/* introduce1   背景 */
+.introduce {
+    display: none; 
+    position: fixed;
+    z-index: 999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+    display: none;
+  }
+
+ /* Intro Content */
+.IntroContent {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    position: relative;
+    left: 55%;
+    top: 30%;
+    margin-left: -620px;
+    margin-top: -250px;
+    width: 1100px;
+    height: 600px;
+  }
+  .content{
+    width: 1000px;
+    height: 550px;
+  }
+.IntroPic{
+    float: left;
+    /* border-left: 10px; */
+    padding-top: 30px;
+    width: 450px;
+}
+.IntroPic2{
+    float: left;
+    /* border-left: 10px; */
+    padding-top: 30px;
+    width: 380px;
+}
+.RIntroPic2{
+    float: left;
+    padding-top:20px;
+    width: 350px;
+}
+.IntroText {
+    position: absolute;
+    top: 10%;
+    left: 45%; 
+    /* top: -500px; */
+    width: 600px;
+    height: 500px;
+
+}
+.IntroText2{
+    position: absolute;
+    top: 10%;
+    left: 40%; 
+    /* top: -500px; */
+    width: 600px;
+    height: 500px;
+
+}
+ .title {
+    padding-left:10px;
+    text-align: left;
+}
+.price{
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 30px;
+}
+/* .con{
+    font-size: 24px;
+    padding-top: 15px;
+    padding-left: 30px;
+    text-align: left;
+} */
+p{
+    margin-bottom: 20px;
+}
+h4{
+    margin-bottom: 16px;
+}
+.con2{
+    font-size: 22px;
+    padding-top: 15px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.close{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 10000;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* 貓貓 */
+
+#burger {
+    position: fixed;
+    top: -330px;;
+    left: -10px;
+    transform: rotate(180deg);
+    transition: 1s ease;
+    z-index: 100;
+}
+#burger:hover{
+    animation: move1;
+    animation-duration: 1s;
+    top: -20px;
+}
+#Beer {
+    position: fixed;
+    bottom: -310px;
+    right: -180px;
+    transform: rotate(30deg);
+    transition: 1s ease;
+    z-index: 100;
+}
+#Beer:hover{
+    animation: move1;
+    animation-duration: 1s;
+    bottom: -20px;
+}
