@@ -240,11 +240,11 @@
 .writeboard{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px 30px auto 30px  auto;
+    grid-template-rows: 30px auto auto 30px  auto;
     grid-row-gap: 15px;
     padding: 20px;
 }
-.writeboard input{
+.writeboard input,.writeboard textarea{
     width: 500px;
 }
 #inputaccount{
@@ -311,3 +311,6 @@ table{
     width: 800px;
     height: 950px ;
 }
+
+
+/* shop2 留言板 */
