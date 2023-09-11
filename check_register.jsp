@@ -26,7 +26,7 @@ if(request.getParameter("username") !=null && !request.getParameter("username").
         con.close();
         out.print("<script>");
         out.print("alert('註冊成功，請接著設定使用者資料');");
-        out.print("window.location.href='account.html';");
+        out.print("window.location.href='account.jsp';");
         out.print("</script>");
         
     } else {
