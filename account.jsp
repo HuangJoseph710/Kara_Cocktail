@@ -107,13 +107,13 @@ try{
       </div>
       <div class="info">
         <!-- 檢查密碼 -->
-        <form action="">
+        <form action="chage_password.jsp">
           
           <label for="password1">密碼</label>
-          <input type="password" id="password1" placeholder="請輸入新密碼">
+          <input type="password" name="password1" placeholder="請輸入新密碼">
           
           <label for="password2">確認新密碼</label>
-          <input type="password" id="password2" placeholder="再輸入一次密碼">
+          <input type="password" name="password2" placeholder="再輸入一次密碼">
           
           <button type="submit">保存</button>
         </form>
