@@ -24,8 +24,8 @@
         </div>
         <div class="car">
             <a href="./car.html"><img src="image/shop.png" style="width:50px;height:50px" ></a>
-        </div>`
-    </header>
+        </div>
+    </header> 
     <div class="backtotop">
         <a href="#Top" title="回到最上方">
             <img src="image/top.png">
@@ -386,5 +386,21 @@
         <sup>©</sup>
         2023 by 卡拉雞尾酒🍸
     </footer>
+
+
+    <!-- <script>		
+		var name = "<%= (String) session.getAttribute("name")%>";
+		var username = "<%= (String) session.getAttribute("username")%>";
+	
+		var userHrefContainer = document.querySelector(".userHrefContainer");
+		if(name!='null'){
+			//覆蓋登入和註冊按鈕
+			userHrefContainer.innerHTML = 
+				"<div class='accpic'><a href='./account.jsp'><img src='image/account.png' style='width:50px;height:50px'></a></div>"+
+            	"<div class='car'><a href='./car.html'><img src='image/shop.png' style='width:50px;height:50px' ></a></div>";
+		}
+
+	</script> -->
+
 </body>
 </html>

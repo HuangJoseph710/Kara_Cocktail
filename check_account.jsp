@@ -21,6 +21,7 @@ if(request.getParameter("name") !=null && !request.getParameter("name").equals("
 
     int row = con.createStatement().executeUpdate(sql);
     session.setAttribute("name",request.getParameter("name"));
+    session.setAttribute("username",request.getParameter("username"));
     con.close();
     out.print("<script>");
     out.print("alert('資料更新成功，請前往首頁瀏覽');");

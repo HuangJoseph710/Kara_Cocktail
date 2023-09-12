@@ -19,7 +19,7 @@ if(request.getParameter("username") !=null && !request.getParameter("username").
     
     if(rs.next()){
         session.setAttribute("username",request.getParameter("username"));
-        session.setAttribute("name",rs.getString(4));
+        session.setAttribute("name",rs.getString(3));
 		con.close();//結束資料庫連結
         response.sendRedirect("index.html") ;
     }

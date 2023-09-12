@@ -1,3 +1,5 @@
+<%@ page import = "java.sql.*, java.util.*"%>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,30 +64,59 @@
         <p><h1 id="discussionid" class="discussion">---討論版---</h1></p><br>
 
         <div class="writeboard">
-            <input type="text" id="inputaccount" placeholder="輸入使用者名稱">
-            <!-- <input type="text" id="inputtitle" placeholder="輸入主旨"> -->
-            <div class="inputword">
-                <textarea name="" id="" cols="50" rows="10" placeholder="撰寫內容"></textarea>
-            </div>
-            <div class="send">
-                <input  class="sub" type="submit" value="送出" width="10px">
-                <input  class="res" type="reset" value="取消" width="10px">
-            </div>
+            <!-- 送出留言 -->
+            <form action="add_message.jsp">
+                <input type="hidden" name="pid" value="<%=request.getParameter("id")%>">
+                <input type="text" name="msg_name" id="inputaccount" placeholder="輸入使用者名稱">
+                <!-- <input type="text" id="inputtitle" placeholder="輸入主旨"> -->
+                <div class="inputword">
+                    <textarea name="message" id="" cols="50" rows="10" placeholder="撰寫內容"></textarea>
+                </div>
+                <div class="send">
+                    <input  class="sub" type="submit" value="送出" width="10px">
+                    <input  class="res" type="reset" value="取消" width="10px">
+                </div>
+            </form>
+
             <div class="others">
-                <table>
-                    <tr><td><strong>板橋jisoo</strong>　　&nbsp;&nbsp;&nbsp;&nbsp;<tt>2023/01/03</tt></td></tr>
-                    <tr><td style="border-bottom: 1px solid #000; padding-bottom: 10px;">高檔，非常合我的味道</td></tr>
-                    <tr><td style="padding-top: 10px;"><strong>板橋ji222222soo</strong>　　&nbsp;&nbsp;&nbsp;&nbsp;<tt>2023/01/03</tt></td></tr>
-                    <tr ><td style="border-bottom: 1px solid #000; padding-bottom: 10px;">高檔，非常合我的味道</td></tr>
-                    <tr><td style="padding-top: 10px;"><strong>板橋j3333isoo</strong>　　&nbsp;&nbsp;&nbsp;&nbsp;<tt>2023/01/03</tt></td></tr>
-                    <tr><td>高檔，非常合我的味道</td></tr>
+                <!-- 留言板 -->
+
+                <table class="msgboard">
+<%
+//<script>
+Class.forName("com.mysql.jdbc.Driver");
+String url="jdbc:mysql://localhost/?serverTimezone=UTC";
+Connection con=DriverManager.getConnection(url,"root","1234");
+String sql = "";
+sql="USE `cocktail`";
+con.createStatement().execute(sql);
+sql="SELECT * FROM `message` WHERE `pid` =" + request.getParameter("id");
+ResultSet rs;
+rs=con.createStatement().executeQuery(sql);
+
+//判斷是否有找到評論
+if (!rs.isBeforeFirst()) {
+%>
+                    <tr><td><strong>暫無任何評論</strong></td></tr>
+<%
+} else {
+    while (rs.next()) {
+%>
+                    <tr><td><strong><%=rs.getString(2)%></strong>　　&nbsp;&nbsp;&nbsp;&nbsp;<tt><%=rs.getString(3)%></tt></td></tr>
+                    <tr><td><%=rs.getString(4)%></td></tr>
+<%
+    }
+}
+con.close();
+
+%>
                 </table>
             </div>
-            <img id="showimg">
+            
         
         <!-- --------------------------------------------------------- -->
         </div>
-
+        <img id="showimg">
     <footer>
         Copyright
         <sup>©</sup>
