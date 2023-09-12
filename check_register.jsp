@@ -22,7 +22,7 @@ if(request.getParameter("username") !=null && !request.getParameter("username").
         + request.getParameter("password") + "')";
         
         int row = con.createStatement().executeUpdate(sql);
-        session.setAttribute("email",request.getParameter("email"));
+        session.setAttribute("username",request.getParameter("username"));
         con.close();
         out.print("<script>");
         out.print("alert('註冊成功，請接著設定使用者資料');");

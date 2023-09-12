@@ -51,3 +51,5 @@ CREATE TABLE `message` (
   `pid` int(8) NOT NULL,
   PRIMARY KEY (`msgid`)
 );
+
+
