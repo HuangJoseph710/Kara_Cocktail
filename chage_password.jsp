@@ -21,7 +21,7 @@ if(request.getParameter("password1") !=null && !request.getParameter("password1"
         session.setAttribute("name",request.getParameter("name"));
         con.close();
         out.print("<script>");
-        out.print("alert('密碼更新成功，請前往首頁瀏覽');");
+        out.print("alert('密碼更新成功');");
         out.print("window.location.href='account.jsp';");
         out.print("</script>");
     

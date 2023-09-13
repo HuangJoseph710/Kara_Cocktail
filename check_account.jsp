@@ -21,11 +21,11 @@ if(request.getParameter("name") !=null && !request.getParameter("name").equals("
 
     int row = con.createStatement().executeUpdate(sql);
     session.setAttribute("name",request.getParameter("name"));
-    session.setAttribute("username",request.getParameter("username"));
+    // session.setAttribute("username",request.getParameter("username"));
     con.close();
     out.print("<script>");
-    out.print("alert('資料更新成功，請前往首頁瀏覽');");
-    out.print("window.location.href='index.html';");
+    out.print("alert('會員資料更新成功');");
+    out.print("window.location.href='account.jsp';");
     out.print("</script>");
 
 
